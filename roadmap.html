@@ -7,42 +7,41 @@
   <style>
     body {
       font-family: "Poppins", sans-serif;
-      background: #fefefe;
+      background: transparent; /* lets poster background show through */
       margin: 0;
       padding: 20px;
     }
 
     h1 {
       text-align: center;
-      color: #444;
+      color: #f7e3c3; /* light gold that matches #402622 */
       margin-bottom: 20px;
     }
 
     .roadmap {
       display: flex;
-      overflow-x: auto;
+      flex-direction: column; /* vertical layout */
       gap: 20px;
-      padding: 20px;
-      scrollbar-width: thin;
+      padding: 10px;
     }
 
     .week {
-      min-width: 220px;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.9); /* soft semi-transparent */
       border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
       cursor: pointer;
-      flex-shrink: 0;
+      overflow: hidden;
     }
 
     .week:hover {
-      transform: translateY(-6px);
+      transform: translateY(-4px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.35);
     }
 
     .week-header {
-      background: linear-gradient(135deg, #6c63ff, #48c6ef);
-      color: white;
+      background: linear-gradient(135deg, #f7a86c, #f7e3c3);
+      color: #402622;
       padding: 16px;
       border-radius: 16px 16px 0 0;
       font-weight: bold;
@@ -53,9 +52,9 @@
     .content {
       padding: 14px;
       display: none;
-      font-size: 14px;
-      color: #333;
-      line-height: 1.4;
+      font-size: 15px;
+      color: #402622;
+      line-height: 1.5;
     }
 
     .week.active .content {
@@ -64,8 +63,8 @@
     }
 
     @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+      from {opacity: 0; transform: translateY(-6px);}
+      to {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
@@ -74,7 +73,7 @@
 
   <div class="roadmap">
     <div class="week" onclick="toggleWeek(this)">
-      <div class="week-header">Week 1<br>Game Start</div>
+      <div class="week-header">Week 1 – Game Start</div>
       <div class="content">
         • Kick-off the competition 🎉 <br>
         • Review rules & objectives <br>
@@ -84,7 +83,7 @@
     </div>
 
     <div class="week" onclick="toggleWeek(this)">
-      <div class="week-header">Week 2<br>Initial Strategy</div>
+      <div class="week-header">Week 2 – Initial Strategy</div>
       <div class="content">
         • Begin coding basic functions 👩‍💻<br>
         • Explore strategies in simulation tool<br>
@@ -94,7 +93,7 @@
     </div>
 
     <div class="week" onclick="toggleWeek(this)">
-      <div class="week-header">Week 3<br>Midpoint Check-in</div>
+      <div class="week-header">Week 3 – Midpoint Check-in</div>
       <div class="content">
         • Receive feedback from MIT mentors 👨‍🏫<br>
         • Refine strategies and fix bugs<br>
@@ -104,7 +103,7 @@
     </div>
 
     <div class="week" onclick="toggleWeek(this)">
-      <div class="week-header">Week 4<br>Finalizing Code</div>
+      <div class="week-header">Week 4 – Finalizing Code</div>
       <div class="content">
         • Debug and optimize algorithms ⚡<br>
         • Write final strategy explanation<br>
@@ -114,7 +113,7 @@
     </div>
 
     <div class="week" onclick="toggleWeek(this)">
-      <div class="week-header">Week 5<br>Final Submission</div>
+      <div class="week-header">Week 5 – Final Submission</div>
       <div class="content">
         • Submit final code + documentation ✅<br>
         • Double-check requirements<br>
@@ -124,7 +123,7 @@
     </div>
 
     <div class="week" onclick="toggleWeek(this)">
-      <div class="week-header">Week 6<br>Preparing Finals</div>
+      <div class="week-header">Week 6 – Preparing Finals</div>
       <div class="content">
         • Celebrate accomplishments 🥳<br>
         • Review ISS Finals format<br>
