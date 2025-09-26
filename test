@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>6-Week Roadmap</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 20px;
+    }
+    .roadmap {
+      max-width: 700px;
+      margin: auto;
+    }
+    .week {
+      background: white;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .week button {
+      width: 100%;
+      padding: 14px;
+      text-align: left;
+      background: #2e72d2;
+      color: white;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+    .week button:hover {
+      background: #2459a5;
+    }
+    .content {
+      padding: 14px;
+      display: none;
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+  <div class="roadmap">
+    <div class="week">
+      <button onclick="toggleContent(this)">Week 1: Game Start</button>
+      <div class="content">Kick-off the competition. Review rules & objectives. Brainstorm strategies. Submit Team Name Form.</div>
+    </div>
+    <div class="week">
+      <button onclick="toggleContent(this)">Week 2: Initial Strategy</button>
+      <div class="content">Begin coding and testing basic functionality. Explore strategies with simulation tool. Submit check-in code & write-up.</div>
+    </div>
+    <div class="week">
+      <button onclick="toggleContent(this)">Week 3: Midpoint Check-in</button>
+      <div class="content">Incorporate feedback from MIT staff. Refine strategy. Identify strengths/weaknesses. Iterate collaboratively.</div>
+    </div>
+    <div class="week">
+      <button onclick="toggleContent(this)">Week 4: Finalizing Code</button>
+      <div class="content">Optimize and debug code. Write final strategy explanation. Run extensive tests before submission.</div>
+    </div>
+    <div class="week">
+      <button onclick="toggleContent(this)">Week 5: Final Submission</button>
+      <div class="content">Submit final code and write-up. Double-check requirements. Celebrate team progress.</div>
+    </div>
+    <div class="week">
+      <button onclick="toggleContent(this)">Week 6: Preparing for Finals</button>
+      <div class="content">Celebrate accomplishments. Review ISS Finals format. Prepare for the live ISS event.</div>
+    </div>
+  </div>
+
+  <script>
+    function toggleContent(button) {
+      const content = button.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
