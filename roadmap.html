@@ -6,74 +6,137 @@
   <title>6-Week Roadmap</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 20px;
+      font-family: "Poppins", sans-serif;
+      background: #fefefe;
+      margin: 0;
+      padding: 20px;
     }
+
+    h1 {
+      text-align: center;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
     .roadmap {
-      max-width: 700px;
-      margin: auto;
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px;
+      scrollbar-width: thin;
     }
+
     .week {
-      background: white;
-      margin: 10px 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-    .week button {
-      width: 100%;
-      padding: 14px;
-      text-align: left;
-      background: #2e72d2;
-      color: white;
-      font-size: 16px;
-      border: none;
-      outline: none;
+      min-width: 220px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
       cursor: pointer;
+      flex-shrink: 0;
     }
-    .week button:hover {
-      background: #2459a5;
+
+    .week:hover {
+      transform: translateY(-6px);
     }
+
+    .week-header {
+      background: linear-gradient(135deg, #6c63ff, #48c6ef);
+      color: white;
+      padding: 16px;
+      border-radius: 16px 16px 0 0;
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+    }
+
     .content {
       padding: 14px;
       display: none;
-      border-top: 1px solid #eee;
+      font-size: 14px;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    .week.active .content {
+      display: block;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
   </style>
 </head>
 <body>
+  <h1>🌱 Zero Robotics 6-Week Roadmap 🚀</h1>
+
   <div class="roadmap">
-    <div class="week">
-      <button onclick="toggleContent(this)">Week 1: Game Start</button>
-      <div class="content">Kick-off the competition. Review rules & objectives. Brainstorm strategies. Submit Team Name Form.</div>
+    <div class="week" onclick="toggleWeek(this)">
+      <div class="week-header">Week 1<br>Game Start</div>
+      <div class="content">
+        • Kick-off the competition 🎉 <br>
+        • Review rules & objectives <br>
+        • Brainstorm early strategies <br>
+        • Submit team name form ✍️
+      </div>
     </div>
-    <div class="week">
-      <button onclick="toggleContent(this)">Week 2: Initial Strategy</button>
-      <div class="content">Begin coding and testing basic functionality. Explore strategies with simulation tool. Submit check-in code & write-up.</div>
+
+    <div class="week" onclick="toggleWeek(this)">
+      <div class="week-header">Week 2<br>Initial Strategy</div>
+      <div class="content">
+        • Begin coding basic functions 👩‍💻<br>
+        • Explore strategies in simulation tool<br>
+        • Assign team roles (coding, testing, docs)<br>
+        • Submit check-in code + write-up
+      </div>
     </div>
-    <div class="week">
-      <button onclick="toggleContent(this)">Week 3: Midpoint Check-in</button>
-      <div class="content">Incorporate feedback from MIT staff. Refine strategy. Identify strengths/weaknesses. Iterate collaboratively.</div>
+
+    <div class="week" onclick="toggleWeek(this)">
+      <div class="week-header">Week 3<br>Midpoint Check-in</div>
+      <div class="content">
+        • Receive feedback from MIT mentors 👨‍🏫<br>
+        • Refine strategies and fix bugs<br>
+        • Identify strengths & weaknesses<br>
+        • Collaborate to iterate together
+      </div>
     </div>
-    <div class="week">
-      <button onclick="toggleContent(this)">Week 4: Finalizing Code</button>
-      <div class="content">Optimize and debug code. Write final strategy explanation. Run extensive tests before submission.</div>
+
+    <div class="week" onclick="toggleWeek(this)">
+      <div class="week-header">Week 4<br>Finalizing Code</div>
+      <div class="content">
+        • Debug and optimize algorithms ⚡<br>
+        • Write final strategy explanation<br>
+        • Test code on multiple layouts<br>
+        • Prep for final submission
+      </div>
     </div>
-    <div class="week">
-      <button onclick="toggleContent(this)">Week 5: Final Submission</button>
-      <div class="content">Submit final code and write-up. Double-check requirements. Celebrate team progress.</div>
+
+    <div class="week" onclick="toggleWeek(this)">
+      <div class="week-header">Week 5<br>Final Submission</div>
+      <div class="content">
+        • Submit final code + documentation ✅<br>
+        • Double-check requirements<br>
+        • Celebrate team progress 🎊<br>
+        • Reflect on the journey
+      </div>
     </div>
-    <div class="week">
-      <button onclick="toggleContent(this)">Week 6: Preparing for Finals</button>
-      <div class="content">Celebrate accomplishments. Review ISS Finals format. Prepare for the live ISS event.</div>
+
+    <div class="week" onclick="toggleWeek(this)">
+      <div class="week-header">Week 6<br>Preparing Finals</div>
+      <div class="content">
+        • Celebrate accomplishments 🥳<br>
+        • Review ISS Finals format<br>
+        • Practice for live event 🚀<br>
+        • Share excitement with teammates
+      </div>
     </div>
   </div>
 
   <script>
-    function toggleContent(button) {
-      const content = button.nextElementSibling;
-      content.style.display = content.style.display === "block" ? "none" : "block";
+    function toggleWeek(card) {
+      card.classList.toggle("active");
     }
   </script>
 </body>
